@@ -16,11 +16,14 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from vendors import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/vendors/', include('vendors.urls')),
     path('api/purchase_orders/', include('purchase_orders.urls')),
+    path('token/', views.ObtainTokenPairView.as_view(), name='token_obtain_pair'),
+    path('token/refresh/', views.RefreshTokenView.as_view(), name='token_refresh'),
     # path('api/performance_metrics/', include('performance_metrics.urls')),
 ]
 
