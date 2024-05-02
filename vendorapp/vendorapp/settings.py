@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'vendors',
     'purchase_orders',
     'performance_metrics',
+    'drf_yasg',
 ]
 
 MIDDLEWARE = [
