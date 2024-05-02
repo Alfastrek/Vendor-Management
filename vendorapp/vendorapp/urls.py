@@ -21,7 +21,7 @@ urlpatterns = [
     path('api/purchase_orders/', include('purchase_orders.urls')),
     path('token/', views.ObtainTokenPairView.as_view(), name='token_obtain_pair'),
     path('token/refresh/', views.RefreshTokenView.as_view(), name='token_refresh'),
-    # path('api/performance_metrics/', include('performance_metrics.urls')),
+    path('api/performance_metrics/', include('performance_metrics.urls')),
     re_path(r'^swagger(?P<format>\.json|\.yaml)$', schema_view.without_ui(cache_timeout=0), name='schema-json'),
     path('swagger/', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
     path('redoc/', schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc'),
